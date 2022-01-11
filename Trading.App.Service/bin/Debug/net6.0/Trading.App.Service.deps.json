@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Trading.App.Service/1.0.0": {
+        "dependencies": {
+          "Trading.App.Core": "1.0.0"
+        },
+        "runtime": {
+          "Trading.App.Service.dll": {}
+        }
+      },
+      "Trading.App.Core/1.0.0": {
+        "runtime": {
+          "Trading.App.Core.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Trading.App.Service/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Trading.App.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

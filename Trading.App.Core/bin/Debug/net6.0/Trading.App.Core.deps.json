@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Trading.App.Core/1.0.0": {
+        "runtime": {
+          "Trading.App.Core.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Trading.App.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,0 +1,15 @@
+C:\Users\John\source\repos\Trading.App\Trading.App.Repository\bin\Debug\net6.0\Trading.App.Repository.deps.json
+C:\Users\John\source\repos\Trading.App\Trading.App.Repository\bin\Debug\net6.0\Trading.App.Repository.dll
+C:\Users\John\source\repos\Trading.App\Trading.App.Repository\bin\Debug\net6.0\ref\Trading.App.Repository.dll
+C:\Users\John\source\repos\Trading.App\Trading.App.Repository\bin\Debug\net6.0\Trading.App.Repository.pdb
+C:\Users\John\source\repos\Trading.App\Trading.App.Repository\bin\Debug\net6.0\Trading.App.Core.dll
+C:\Users\John\source\repos\Trading.App\Trading.App.Repository\bin\Debug\net6.0\Trading.App.Core.pdb
+C:\Users\John\source\repos\Trading.App\Trading.App.Repository\obj\Debug\net6.0\Trading.App.Repository.csproj.AssemblyReference.cache
+C:\Users\John\source\repos\Trading.App\Trading.App.Repository\obj\Debug\net6.0\Trading.App.Repository.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\John\source\repos\Trading.App\Trading.App.Repository\obj\Debug\net6.0\Trading.App.Repository.AssemblyInfoInputs.cache
+C:\Users\John\source\repos\Trading.App\Trading.App.Repository\obj\Debug\net6.0\Trading.App.Repository.AssemblyInfo.cs
+C:\Users\John\source\repos\Trading.App\Trading.App.Repository\obj\Debug\net6.0\Trading.App.Repository.csproj.CoreCompileInputs.cache
+C:\Users\John\source\repos\Trading.App\Trading.App.Repository\obj\Debug\net6.0\Trading.App.Repository.csproj.CopyComplete
+C:\Users\John\source\repos\Trading.App\Trading.App.Repository\obj\Debug\net6.0\Trading.App.Repository.dll
+C:\Users\John\source\repos\Trading.App\Trading.App.Repository\obj\Debug\net6.0\ref\Trading.App.Repository.dll
+C:\Users\John\source\repos\Trading.App\Trading.App.Repository\obj\Debug\net6.0\Trading.App.Repository.pdb
