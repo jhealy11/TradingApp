@@ -22,8 +22,6 @@ namespace Trading.App.Controllers
             try
             {
 
-
-
                 var trade = new Core.Trade.Trade(model.Id, model.Security, model.TradeDate, model.Price, model.Quantity, new Core.Trade.ValueObject.TradeType { Description = "Buy", Id = 1});
 
                 _purchaseStockService.PurchaseStock(trade);
