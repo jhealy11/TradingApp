@@ -1,4 +1,4 @@
-using Trading.App.Validator;
+
 using Microsoft.EntityFrameworkCore;
 using Trading.App.Repository.Trade;
 using Trading.App.Repository;
@@ -15,10 +15,15 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 
-builder.Services.AddScoped<IPurchaseValidator, PurchaseValidator>();
+builder.Services.AddScoped<IPurchaseValidatorService, PurchaseValidatorService>();
+builder.Services.AddScoped<IPurchaseStockService, PurchaseStockService>();
+
+
 builder.Services.AddScoped<ITradeRepository, TradeRepository>();
 builder.Services.AddScoped<IPurchaseStockRepository, PurchaseStockRepository>();
-builder.Services.AddScoped<IPurchaseStockService, PurchaseStockService>();
+builder.Services.AddScoped<IStockValidatorRepository, StockValidatorRepository>();
+
+
 builder.Services.AddDbContext<TradingAppContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("TradingAppContext")));
 
 

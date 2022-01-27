@@ -17,15 +17,15 @@ namespace Trading.App.Controllers
             _purchaseStockService = purchaseStockService;
             _tradeRepository = tradeRepository;
         }
-
-        public PurchaseStockController(ITradeRepository tradeRepository)
-        {
-            _tradeRepository = tradeRepository;
-        }
-        public async Task<IActionResult> PurchaseStock()
+        public async Task<IActionResult> PurchaseStock(Model.TradeViewModel model)
         {
             try
             {
+
+                var trade = new Core.Trade.Trade(model.Id, model.Security, model.TradeDate, model.Price, model.Quantity, new Core.Trade.ValueObject.TradeType { Description = "Buy", Id = 1});
+
+                _purchaseStockService.PurchaseStock(trade);
+
                 return Ok();
             }
             catch (Exception ex)
