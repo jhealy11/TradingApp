@@ -2,6 +2,6 @@
 {
     public interface IPurchaseValidatorService
     {
-        bool CanPurchaseStock(Trade trade);
+        Task<bool> CanPurchaseStock(Trade trade);
     }
 }

@@ -18,7 +18,7 @@ namespace Trading.App.Repository.Trade
 
             foreach (var trade in trades)
             {
-                var type = new Trading.App.Core.Trade.ValueObject.TradeType() { Id = 1, Description = "Sell"};
+                var type = Enum.Parse<Core.Trade.ValueObject.TradeType>(trade.TradeType.Id.ToString());
 
                 tradeModel.Add(new Core.Trade.Trade(trade.Id, trade.Security, trade.TradeDate, trade.Price, trade.Quantity, type));
             }

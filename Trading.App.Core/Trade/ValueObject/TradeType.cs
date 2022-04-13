@@ -1,9 +1,9 @@
 ﻿
 namespace Trading.App.Core.Trade.ValueObject
 {
-    public class TradeType
+    public enum TradeType
     {
-        public int Id { get; set; }
-        public string Description { get; set; }
+        Buy = 1,
+        Sell = 2
     }
 }

@@ -21,10 +21,12 @@ namespace Trading.App.Controllers
         {
             try
             {
+                var tradeType = Core.Trade.ValueObject.TradeType.Buy;
 
-                var trade = new Core.Trade.Trade(model.Id, model.Security, model.TradeDate, model.Price, model.Quantity, new Core.Trade.ValueObject.TradeType { Description = "Buy", Id = 1});
+                var trade = new Core.Trade.Trade(model.Id, model.Security, model.TradeDate, model.Price, model.Quantity, tradeType);
 
-                _purchaseStockService.PurchaseStock(trade);
+                
+                await _purchaseStockService.PurchaseStock(trade);
 
                 return Ok();
             }

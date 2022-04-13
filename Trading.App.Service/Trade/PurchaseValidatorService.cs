@@ -1,6 +1,7 @@
 ﻿using Trading.App.Core.Trade.Service;
 using Trading.App.Core.Trade.Repository;
 using Trading.App.Core.Trade.ValueObject;
+using Trading.App.Core.Trade.Exception;
 
 namespace Trading.App.Service.Trade
 {
@@ -13,14 +14,14 @@ namespace Trading.App.Service.Trade
             _stockValidatorRepository = stockValidatorRepository;
         }
 
-        public bool CanPurchaseStock(Core.Trade.Trade trade)
+        public async Task<bool> CanPurchaseStock(Core.Trade.Trade trade)
         {
-            var balance = _stockValidatorRepository.GetCurrentBalance();
+            var balance = await _stockValidatorRepository.GetCurrentBalance();
 
             var tradeBalanceValidator = new TradeBalanceValidator();
 
             if (tradeBalanceValidator.IsTradeBalanceBreached(trade, balance))
-                throw new Exception("Trade Balance Breached");
+                throw new TradeBalanceBreachedException("Trade Balance Breached");
 
             return true;
 

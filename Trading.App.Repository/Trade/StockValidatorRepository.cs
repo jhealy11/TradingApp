@@ -1,4 +1,4 @@
-﻿
+﻿using Microsoft.EntityFrameworkCore;
 using Trading.App.Core.Trade.Repository;
 
 namespace Trading.App.Repository.Trade
@@ -12,9 +12,10 @@ namespace Trading.App.Repository.Trade
             _tradingAppContext = tradingAppContext;
         }
 
-        public decimal GetCurrentBalance()
+        public async Task<decimal> GetCurrentBalance()
         {
-            return _tradingAppContext.CompanyBalances.FirstOrDefault().Balance;
+            var result =  await _tradingAppContext.CompanyBalances.SingleOrDefaultAsync();
+            return result.Balance;
         }
     }
 }

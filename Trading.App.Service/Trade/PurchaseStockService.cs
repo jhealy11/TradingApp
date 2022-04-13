@@ -10,18 +10,29 @@ namespace Trading.App.Service.Trade
 {
     public sealed class PurchaseStockService : IPurchaseStockService
     {
-        //private readonly IStockValidator _stockValidator;
+        private readonly IPurchaseValidatorService _stockValidator;
         private readonly IPurchaseStockRepository _purchaseStockRepository;
+        private readonly IStockValidatorRepository _stockValidatorRepository;
 
-        public PurchaseStockService(IPurchaseStockRepository purchaseStockRepository /*, IStockValidator stockValidator*/)
+        public PurchaseStockService(IPurchaseStockRepository purchaseStockRepository, IPurchaseValidatorService stockValidator, IStockValidatorRepository stockValidatorRepository)
         {
             _purchaseStockRepository = purchaseStockRepository;
-            //_stockValidator = stockValidator;
+            _stockValidator = stockValidator;
+            _stockValidatorRepository = stockValidatorRepository;
         }
 
-        public void PurchaseStock(Core.Trade.Trade trade)
+        public async Task PurchaseStock(Core.Trade.Trade trade)
         {
-            throw new NotImplementedException();
+
+            if(trade.CanSave())
+            {
+                if(await _stockValidator.CanPurchaseStock(trade))
+                {
+                    
+                    trade.SetNewCashBalance(await _stockValidatorRepository.GetCurrentBalance());
+                    await _purchaseStockRepository.SaveTrade(trade);
+                }
+            }
         }
     }
 }

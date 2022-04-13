@@ -4,7 +4,7 @@
     {
         public bool IsTradeBalanceBreached(Trade trade, decimal currentBalance)
         {
-            if ((currentBalance - trade.TradeTotal()) < 0)
+            if ((currentBalance - Math.Abs(trade.TradeTotal())) < 0)
                 return true;
 
             return false;
