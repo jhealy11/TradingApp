@@ -25,7 +25,6 @@ namespace Trading.App.Controllers
 
                 var trade = new Core.Trade.Trade(model.Id, model.Security, model.TradeDate, model.Price, model.Quantity, tradeType);
 
-                
                 await _purchaseStockService.PurchaseStock(trade);
 
                 return Ok();

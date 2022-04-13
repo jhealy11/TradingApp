@@ -22,7 +22,6 @@ namespace Trading.App.Core.Tests.Trade.ValueObject
             
             var result = _validator.IsTradeBalanceBreached(trade, balance);
 
-
             Assert.IsTrue(result);
         }
 

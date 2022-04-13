@@ -29,7 +29,6 @@ namespace Trading.App.Repository.Tests
                 context.Database.EnsureCreated();
                 // DbInitializer.Initialize(context);
             }
-
         }
     }
 }

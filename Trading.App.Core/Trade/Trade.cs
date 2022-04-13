@@ -33,8 +33,23 @@
         public bool CanSave()
         {
 
-            return true;
+            if(_id == Guid.Empty)
+                return false;
 
+            if(string.IsNullOrEmpty(_secruity))
+                return false;
+
+            if(_tradeDate == DateTime.MinValue || _tradeDate > DateTime.MaxValue)
+                return false;
+
+            if(_price <= 0)
+                return false;
+
+            if (_quantity <= 0)
+                return false;
+
+
+            return true;
         }
 
         public void SetNewCashBalance(decimal existingCashBalance)

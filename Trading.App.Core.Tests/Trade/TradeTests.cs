@@ -28,5 +28,71 @@ namespace Trading.App.Core.Tests
 
             Assert.AreEqual(total, result);
         }
+
+        [Test]
+        public void CanSave_WithInvalidGuid_ReturnsFalse()
+        {
+            Core.Trade.Trade trade = new Core.Trade.Trade(System.Guid.Empty, "MSFT", System.DateTime.Now, 45, 50000, Core.Trade.ValueObject.TradeType.Buy);
+
+
+            var result = trade.CanSave();
+
+            Assert.IsFalse(result);
+        }
+
+        [Test]
+        public void CanSave_WithNullSecurity_ReturnsFalse()
+        {
+            Core.Trade.Trade trade = new Core.Trade.Trade(new System.Guid(), null, System.DateTime.Now, 45, 50000, Core.Trade.ValueObject.TradeType.Buy);
+
+
+            var result = trade.CanSave();
+
+            Assert.IsFalse(result);
+        }
+
+        [Test]
+        public void CanSave_WithMinDate_ReturnsFalse()
+        {
+            Core.Trade.Trade trade = new Core.Trade.Trade(new System.Guid(), "MSFT", System.DateTime.MinValue, 45, 50000, Core.Trade.ValueObject.TradeType.Buy);
+
+
+            var result = trade.CanSave();
+
+            Assert.IsFalse(result);
+        }
+
+        [Test]
+        public void CanSave_WithMaxDate_ReturnsFalse()
+        {
+            Core.Trade.Trade trade = new Core.Trade.Trade(new System.Guid(), "MSFT", System.DateTime.MaxValue, 45, 50000, Core.Trade.ValueObject.TradeType.Buy);
+
+
+            var result = trade.CanSave();
+
+            Assert.IsFalse(result);
+        }
+
+        [Test]
+        public void CanSave_WithNegativePrice_ReturnsFalse()
+        {
+            Core.Trade.Trade trade = new Core.Trade.Trade(new System.Guid(), "MSFT", System.DateTime.Now, -45, 50000, Core.Trade.ValueObject.TradeType.Buy);
+
+
+            var result = trade.CanSave();
+
+            Assert.IsFalse(result);
+        }
+
+        [Test]
+        public void CanSave_WithNegativeQuantity_ReturnsFalse()
+        {
+            Core.Trade.Trade trade = new Core.Trade.Trade(new System.Guid(), "MSFT", System.DateTime.Now, 45, -50000, Core.Trade.ValueObject.TradeType.Buy);
+
+
+            var result = trade.CanSave();
+
+            Assert.IsFalse(result);
+        }
     }
 }

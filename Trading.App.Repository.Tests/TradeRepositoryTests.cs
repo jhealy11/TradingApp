@@ -7,7 +7,6 @@ namespace Trading.App.Repository.Tests
 {
     public class TradeRepositoryTests : BaseTest
     {
-
         private ITradeRepository _tradeRepository = null;
 
         [SetUp]
