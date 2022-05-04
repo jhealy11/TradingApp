@@ -17,7 +17,7 @@ namespace Trading.App.Core.Tests.Trade.ValueObject
         public void IsTradeBalanceBreached_WithNotEnoughCash_IsBreached()
         {
             const decimal balance = 60m;
-            var trade = new Core.Trade.Trade(new Guid(), "MSFT", DateTime.Now, 50, 5000, TradeType.Buy);
+            var trade = new Core.Trade.Trade(Guid.NewGuid(), "MSFT", DateTime.Now, 50, 5000, TradeType.Buy);
             
             
             var result = _validator.IsTradeBalanceBreached(trade, balance);
@@ -29,7 +29,7 @@ namespace Trading.App.Core.Tests.Trade.ValueObject
         public void IsTradeBalanceBreached_WithEnoughCash_IsNotBreached()
         {
             const decimal balance = 600000000m;
-            var trade = new Core.Trade.Trade(new Guid(), "MSFT", DateTime.Now, 50, 5000, TradeType.Buy);
+            var trade = new Core.Trade.Trade(Guid.NewGuid(), "MSFT", DateTime.Now, 50, 5000, TradeType.Buy);
 
 
             var result = _validator.IsTradeBalanceBreached(trade, balance);

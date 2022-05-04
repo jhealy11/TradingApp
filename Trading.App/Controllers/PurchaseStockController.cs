@@ -8,14 +8,11 @@ namespace Trading.App.Controllers
     [ApiController]
     public class PurchaseStockController : ControllerBase
     {
-        private readonly ITradeRepository _tradeRepository;
-
         private readonly IPurchaseStockService _purchaseStockService;
 
-        public PurchaseStockController(IPurchaseStockService purchaseStockService, ITradeRepository tradeRepository)
+        public PurchaseStockController(IPurchaseStockService purchaseStockService)
         {
             _purchaseStockService = purchaseStockService;
-            _tradeRepository = tradeRepository;
         }
         public async Task<IActionResult> PurchaseStock(Model.TradeViewModel model)
         {
@@ -34,7 +31,5 @@ namespace Trading.App.Controllers
                 return BadRequest(ex.Message);
             }
         }
-
-
     }
 }

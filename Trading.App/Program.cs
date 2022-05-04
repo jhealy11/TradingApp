@@ -17,11 +17,14 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IPurchaseValidatorService, PurchaseValidatorService>();
 builder.Services.AddScoped<IPurchaseStockService, PurchaseStockService>();
+builder.Services.AddScoped<ISellStockService, SellStockService>();
 
 
 builder.Services.AddScoped<ITradeRepository, TradeRepository>();
 builder.Services.AddScoped<IPurchaseStockRepository, PurchaseStockRepository>();
 builder.Services.AddScoped<IStockValidatorRepository, StockValidatorRepository>();
+
+builder.Services.AddScoped<ISellStockRepository, SellStockRepository>();
 
 
 builder.Services.AddDbContext<TradingAppContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("TradingAppContext")));
