@@ -5,7 +5,8 @@ using Trading.App.Repository;
 using Trading.App.Core.Trade.Repository;
 using Trading.App.Core.Trade.Service;
 using Trading.App.Service.Trade;
-
+using Trading.App.Core.Trade.Factory;
+using Trading.App.Factory;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,11 +28,23 @@ builder.Services.AddScoped<IStockValidatorRepository, StockValidatorRepository>(
 builder.Services.AddScoped<ISellStockRepository, SellStockRepository>();
 
 
+builder.Services.AddScoped<ICreateNewTrade, CreateNewTrade>();
+
 builder.Services.AddDbContext<TradingAppContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("TradingAppContext")));
 
+builder.Services.AddControllers();
+
+builder.Services.AddHttpClient();
 
 
 var app = builder.Build();
+
+app.UseCors(x => x.AllowAnyMethod()
+                    .AllowAnyHeader()
+                    .SetIsOriginAllowed(origin => true) // allow any origin
+                    .AllowCredentials()); // allow credentials
+
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

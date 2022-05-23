@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Trading.App.Core.Trade.Service;
+using Trading.App.Core.Trade.Factory;
 
 namespace Trading.App.Controllers
 {
@@ -9,21 +10,21 @@ namespace Trading.App.Controllers
     public class SellStockController : ControllerBase
     {
         private readonly ISellStockService _sellStockService;
-
-        public SellStockController(ISellStockService sellStockService)
+        private readonly ICreateNewTrade _createNewTrade;
+        public SellStockController(ISellStockService sellStockService, ICreateNewTrade createNewTrade)
         {
             _sellStockService = sellStockService;
+            _createNewTrade = createNewTrade;
         }
 
+        [HttpPost]
         public async Task<IActionResult> SellStock(Model.TradeViewModel model)
         {
             try
             {
                 try
                 {
-                    var tradeType = Core.Trade.ValueObject.TradeType.Sell;
-
-                    var trade = new Core.Trade.Trade(model.Id, model.Security, model.TradeDate, model.Price, model.Quantity, tradeType);
+                    var trade = _createNewTrade.CreateNewTrade(model.Security, model.TradeDate, model.Price, model.Quantity, model.BuySell);
 
                     await _sellStockService.SellStock(trade);
 

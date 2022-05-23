@@ -1,5 +1,5 @@
 ﻿using Trading.App.Core.Trade.Repository;
-
+using Microsoft.EntityFrameworkCore;
 namespace Trading.App.Repository.Trade
 {
     public sealed class TradeRepository : ITradeRepository
@@ -10,9 +10,14 @@ namespace Trading.App.Repository.Trade
             _context = context;
         }
 
-        public IEnumerable<Core.Trade.Trade> GetTrades()
+        public async Task<IEnumerable<Core.Trade.Trade>> GetTrades()
         {
-            var trades = _context.Trades;
+            //ToDo: Add await here...
+
+            var trades = _context.Trades
+                .Include(x => x.TradeType).ToList();
+                         
+
 
             var tradeModel = new List<Core.Trade.Trade>();
 
