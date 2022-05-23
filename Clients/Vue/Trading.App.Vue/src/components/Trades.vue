@@ -14,7 +14,7 @@
         </thead>
         <tbody>
             <tr :key="trade.id" v-for="trade in trades">
-                <Trade :trade="trade"/>
+                <Trade :trade="trade" />
             </tr>
 
             <!--<tr v-for="trade in trades"

@@ -1,19 +1,15 @@
 <template>
     <h1>Trade Purchaser</h1>
-    <Button />
-    <hr/>
-    <Trades />
+    <router-view></router-view>
+    <Footer></Footer>
 </template>
 
 <script>
-    import Button from './components/Button'
-    import Trades from './components/Trades'
-    
+    import Footer from './components/Footer'
 export default {
   name: 'App',
         components: {
-            Button,
-            Trades
+            Footer
   }
 }
 </script>
