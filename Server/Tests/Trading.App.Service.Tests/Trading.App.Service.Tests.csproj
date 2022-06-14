@@ -18,10 +18,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Trading.App.Core\Trading.App.Core.csproj" />
-    <ProjectReference Include="..\Trading.App.Repository\Trading.App.Repository.csproj" />
-    <ProjectReference Include="..\Trading.App.Service\Trading.App.Service.csproj" />
-    <ProjectReference Include="..\Trading.App\Trading.App.csproj" />
+    <ProjectReference Include="..\..\Trading.App.Core\Trading.App.Core.csproj" />
+    <ProjectReference Include="..\..\Trading.App.Repository\Trading.App.Repository.csproj" />
+    <ProjectReference Include="..\..\Trading.App.Service\Trading.App.Service.csproj" />
+    <ProjectReference Include="..\..\Trading.App\Trading.App.csproj" />
   </ItemGroup>
 
 </Project>

@@ -8,7 +8,13 @@ namespace Trading.App.Factory
         
         Trade ICreateNewTrade.CreateNewTrade(string security, DateTime tradeDate, decimal price, int quantity, string tradeType)
         {
-            var convertedTradeType = Enum.Parse<Core.Trade.ValueObject.TradeType>(tradeType);
+            Enum.TryParse<Core.Trade.ValueObject.TradeType>(tradeType, out var convertedTradeType);
+
+
+            if(!Enum.IsDefined<Core.Trade.ValueObject.TradeType>(convertedTradeType))
+            {
+                throw new Core.Trade.Exception.UnknownTradeTypeException($"Unknown Trade Type {tradeType}");
+            }
 
             var id = Guid.NewGuid();
 

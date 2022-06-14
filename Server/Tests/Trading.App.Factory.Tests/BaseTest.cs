@@ -1,13 +1,13 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
+using Trading.App.Repository;
 
-namespace Trading.App.Repository.Tests
+namespace Trading.App.Factory
 {
     public class BaseTest
     {
-
         protected WebApplicationBuilder builder = null;
         protected BaseTest()
         {
@@ -16,6 +16,7 @@ namespace Trading.App.Repository.Tests
 
 
             builder.Services.AddScoped<Core.Trade.Repository.ITradeRepository, Repository.Trade.TradeRepository>();
+            builder.Services.AddScoped<Core.Trade.Factory.ICreateNewTrade, Trading.App.Factory.CreateNewTrade>();
             builder.Services.AddDbContext<TradingAppContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("TradingAppContext")));
 
             var app = builder.Build();

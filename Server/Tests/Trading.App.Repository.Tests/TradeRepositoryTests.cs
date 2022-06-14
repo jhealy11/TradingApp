@@ -9,14 +9,11 @@ namespace Trading.App.Repository.Tests
     {
         private ITradeRepository _tradeRepository = null;
 
-        [SetUp]
+        [OneTimeSetUp]
         public void Setup()
         {
-
             IServiceProvider _serviceProvider = builder.Services.BuildServiceProvider();
             _tradeRepository = _serviceProvider.GetService<ITradeRepository>();
-
-            //_tradeRepository = builder.Services<TradeRepository>();
         }
 
         [Test]

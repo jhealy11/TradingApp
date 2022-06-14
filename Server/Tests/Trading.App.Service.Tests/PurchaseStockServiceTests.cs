@@ -11,7 +11,7 @@ namespace Trading.App.Service.Tests
     {
         private IPurchaseStockService _purchaseStrockService = null;
 
-        [SetUp]
+        [OneTimeSetUp]
         public void Setup()
         {
             IServiceProvider _serviceProvider = builder.Services.BuildServiceProvider();

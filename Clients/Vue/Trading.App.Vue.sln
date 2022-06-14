@@ -2,7 +2,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trading.App.Vue", "Trading.App.Vue\Trading.App.Vue.csproj", "{78D303F3-4BB5-4677-A16D-0035FFF2A060}"
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "Trading.App.Vue", "Trading.App.Vue\Trading.App.Vue.njsproj", "{76D61570-2DB2-4C85-8254-7E7CFAD2E8B5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -10,10 +10,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{78D303F3-4BB5-4677-A16D-0035FFF2A060}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{78D303F3-4BB5-4677-A16D-0035FFF2A060}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{78D303F3-4BB5-4677-A16D-0035FFF2A060}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{78D303F3-4BB5-4677-A16D-0035FFF2A060}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76D61570-2DB2-4C85-8254-7E7CFAD2E8B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76D61570-2DB2-4C85-8254-7E7CFAD2E8B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76D61570-2DB2-4C85-8254-7E7CFAD2E8B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76D61570-2DB2-4C85-8254-7E7CFAD2E8B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
